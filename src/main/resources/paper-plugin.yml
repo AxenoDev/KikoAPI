@@ -1,0 +1,6 @@
+name: KikoAPI
+version: '${version}'
+main: fr.kikoplugins.kikoapi.KikoAPI
+api-version: '${minMinecraftVersion}'
+load: STARTUP
+authors: [Kiko]
