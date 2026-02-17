@@ -13,6 +13,8 @@ val minMinecraftVersion: String by project
 val bStatsVersion: String by project
 val caffeineVersion: String by project
 val hikariCPVersion: String by project
+val placeholderApiVersion: String by project
+val luckPermsVersion: String by project
 val junitVersion: String by project
 val mockbukkitVersion: String by project
 
@@ -24,6 +26,7 @@ repositories {
     mavenLocal()
 
     maven("https://repo.papermc.io/repository/maven-public/")
+    maven("https://repo.extendedclip.com/releases/")
     maven("https://jitpack.io")
 }
 
@@ -34,6 +37,11 @@ dependencies {
     implementation("org.bstats:bstats-bukkit:${bStatsVersion}")
     compileOnly("com.github.ben-manes.caffeine:caffeine:${caffeineVersion}")
     compileOnly("com.zaxxer:HikariCP:${hikariCPVersion}")
+
+    // Plugin Dependencies
+    compileOnly("me.clip:placeholderapi:${placeholderApiVersion}")
+//    compileOnly("me.clip:placeholderapi-paper:${placeholderApiVersion}") // TODO: Implement this when PAPI supports it
+    compileOnly("net.luckperms:api:${luckPermsVersion}")
 
     // Test Dependencies
     testImplementation(paperweight.paperDevBundle("$minecraftVersion-R0.1-SNAPSHOT"))
@@ -62,6 +70,7 @@ tasks {
         downloadPlugins {
             modrinth("LuckPerms", "v5.5.17-bukkit")
             github("jpenilla", "TabTPS", "v1.3.29", "tabtps-paper-1.3.29.jar")
+            github("PlaceholderAPI", "PlaceholderAPI", placeholderApiVersion, "PlaceholderAPI-$placeholderApiVersion.jar")
         }
     }
 

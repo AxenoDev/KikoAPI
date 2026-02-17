@@ -6,3 +6,11 @@ bootstrapper: fr.kikoplugins.kikoapi.KikoAPIBootstrap
 api-version: '${minMinecraftVersion}'
 load: STARTUP
 authors: [Kiko]
+dependencies:
+  server:
+    PlceholderAPI:
+      load: BEFORE
+      required: false
+    LuckPerms:
+      load: BEFORE
+      required: false
