@@ -57,10 +57,10 @@ defineProps<{
                     <div class="image-bg animate-image-bg"/>
                     <slot name="home-hero-image">
                         <CachedImage
-                            v-if="image"
-                            class="image-src animate-image"
-                            :src="typeof image === 'string' ? image : image.src"
-                            :alt="typeof image === 'string' ? 'Hero Image' : (image.alt || 'Hero Image')"
+                                v-if="image"
+                                class="image-src animate-image"
+                                :src="typeof image === 'string' ? image : image.src"
+                                :alt="typeof image === 'string' ? 'Hero Image' : (image.alt || 'Hero Image')"
                         />
                     </slot>
                 </div>
@@ -313,11 +313,6 @@ defineProps<{
     .KikoHero.has-image .actions {
         justify-content: flex-start;
     }
-}
-
-.action {
-    flex-shrink: 0;
-    padding: 6px;
 }
 
 .image {
