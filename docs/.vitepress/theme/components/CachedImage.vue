@@ -117,7 +117,6 @@ onMounted(() => {
         isLoading.value = false;
     }
 });
-});
 
 watch(() => props.src, (newSrc) => {
     if (newSrc) {
